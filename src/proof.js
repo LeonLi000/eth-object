@@ -24,7 +24,7 @@ class Proof extends EthObject{
     }
   }
   static fromStack(stack){ 
-    let arrayProof = stack.map((trieNode)=>{ return trieNode.raw })
+    let arrayProof = stack.map((trieNode)=>{ return encode(trieNode.raw).toString('hex') })
     return new Proof(arrayProof)
   }
 }
